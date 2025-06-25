@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MIGRALINK | Conectando Talento</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f7f9fa;
+      color: #333;
+    }
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav a {
+      color: white;
+      margin-left: 2rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(to right, #006699, #00a676);
+      color: white;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: auto;
+    }
+    .section {
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    .section h2 {
+      color: #006699;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .form-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .form-box {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      flex: 1 1 45%;
+      min-width: 300px;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 0.7rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #00a676;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+    .footer {
+      text-align: center;
+      background: #003366;
+      color: white;
+      padding: 1rem;
+    }
+    .mensaje {
+      display: none;
+      padding: 1rem;
+      margin-top: 1rem;
+      background-color: #dff0d8;
+      color: #3c763d;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2>MIGRALINK</h2>
+    <nav>
+      <a href="#migrante">Migrante</a>
+      <a href="#empresa">Empresa</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Conectando Talento</h1>
+    <p>Impulsando Oportunidades para personas migrantes y empresas inclusivas</p>
+  </section>
+
+  <section class="section" id="registro">
+    <h2>Registro</h2>
+    <div class="form-container">
+
+      <div class="form-box" id="migrante">
+        <h3>🧑 Migrante</h3>
+        <input type="text" placeholder="Nombre completo" />
+        <input type="text" placeholder="Nacionalidad" />
+        <input type="text" placeholder="Documento (CE, pasaporte...)" />
+        <textarea placeholder="Describe tus habilidades"></textarea>
+        <input type="file" />
+        <button onclick="mostrarMensaje('migranteMsg')">Enviar</button>
+        <div class="mensaje" id="migranteMsg">¡Gracias por registrarte!</div>
+      </div>
+
+      <div class="form-box" id="empresa">
+        <h3>🏢 Empresa</h3>
+        <input type="text" placeholder="Nombre de la empresa" />
+        <input type="email" placeholder="Correo de contacto" />
+        <textarea placeholder="¿Qué talento estás buscando?"></textarea>
+        <button onclick="mostrarMensaje('empresaMsg')">Buscar Talento</button>
+        <div class="mensaje" id="empresaMsg">¡Te contactaremos pronto!</div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    © 2025 MIGRALINK – Plataforma para validar y conectar talento migrante
+  </footer>
+
+  <script>
+    function mostrarMensaje(id) {
+      const msg = document.getElementById(id);
+      msg.style.display = 'block';
+      setTimeout(() => msg.style.display = 'none', 4000);
+    }
+  </script>
+
+</body>
+</html>

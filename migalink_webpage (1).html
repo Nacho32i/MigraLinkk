@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MIGRALINK | Conectando Talento</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f7f9fa;
+      color: #333;
+    }
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header img {
+      height: 50px;
+    }
+    nav a {
+      color: white;
+      margin-left: 2rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(to right, #006699, #00a676);
+      color: white;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      max-width: 600px;
+      font-size: 1.2rem;
+    }
+    .section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .section h3 {
+      font-size: 2rem;
+      color: #006699;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .feature {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .user-types {
+      display: flex;
+      justify-content: space-around;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .form-box {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      flex: 1 1 45%;
+      min-width: 300px;
+    }
+    input, select, textarea, button {
+      display: block;
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem 0 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      background-color: #00a676;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #008f63;
+    }
+    .footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+    .message {
+      display: none;
+      padding: 1rem;
+      margin-top: 1rem;
+      background-color: #dff0d8;
+      color: #3c763d;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="/mnt/data/A_vector-based_digital_illustration_features_a_cir.png" alt="Logo MIGRALINK">
+    <nav>
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#registro">Registro</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>MIGRALINK</h2>
+    <p>Conectando Talento, Impulsando Oportunidades</p>
+  </section>
+
+  <section class="section" id="como-funciona">
+    <h3>¿Cómo funciona?</h3>
+    <div class="features">
+      <div class="feature">
+        <h4>1. Registro</h4>
+        <p>Las personas migrantes crean su perfil y suben sus documentos y certificados.</p>
+      </div>
+      <div class="feature">
+        <h4>2. Validación</h4>
+        <p>Verificamos títulos, experiencia y habilidades mediante evaluaciones técnicas.</p>
+      </div>
+      <div class="feature">
+        <h4>3. Perfil Verificado</h4>
+        <p>Generamos un perfil profesional confiable con sello MIGRALINK.</p>
+      </div>
+      <div class="feature">
+        <h4>4. Acceso de Empresas</h4>
+        <p>Las empresas acceden a talento validado, listo para contratar sin burocracia.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="beneficios">
+    <h3>Beneficios</h3>
+    <div class="features">
+      <div class="feature">
+        <h4>Para migrantes</h4>
+        <p>Reconocimiento justo de sus capacidades, acceso a empleos formales, mayor visibilidad profesional.</p>
+      </div>
+      <div class="feature">
+        <h4>Para empresas</h4>
+        <p>Talento calificado y verificado, ahorro en selección y compromiso con la inclusión.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="registro">
+    <h3>Registro</h3>
+    <div class="user-types">
+      <div class="form-box">
+        <h4>🧑 Migrante</h4>
+        <input id="nombreMigrante" type="text" placeholder="Nombre completo">
+        <input id="nacionalidadMigrante" type="text" placeholder="Nacionalidad">
+        <input id="documentoMigrante" type="text" placeholder="Documento (DNI, pasaporte, CE)">
+        <textarea id="habilidadesMigrante" placeholder="Describe tus habilidades, oficios o profesiones"></textarea>
+        <input id="archivoMigrante" type="file" />
+        <button onclick="mostrarMensaje('mensajeMigrante')">Enviar solicitud</button>
+        <div id="mensajeMigrante" class="message">¡Tu solicitud ha sido enviada correctamente!</div>
+      </div>
+      <div class="form-box">
+        <h4>🏢 Empresa</h4>
+        <input id="nombreEmpresa" type="text" placeholder="Nombre de la empresa">
+        <input id="correoEmpresa" type="email" placeholder="Correo de contacto">
+        <textarea id="talentoBuscado" placeholder="¿Qué tipo de talento estás buscando?"></textarea>
+        <button onclick="mostrarMensaje('mensajeEmpresa')">Buscar perfiles</button>
+        <div id="mensajeEmpresa" class="message">¡Te mostraremos los perfiles ideales muy pronto!</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    &copy; 2025 MIGRALINK | Plataforma para validar talento migrante
+  </footer>
+
+  <script>
+    function mostrarMensaje(id) {
+      const mensaje = document.getElementById(id);
+      mensaje.style.display = 'block';
+      setTimeout(() => {
+        mensaje.style.display = 'none';
+      }, 4000);
+    }
+  </script>
+</body>
+</html>
